@@ -10,10 +10,20 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+    path: '/signin',
+    name: 'signIn',
+    component: () => import(/* webpackChunkName: "signin" */ '../views/SignIn.vue')
+  },
+  {
+    path: '/signup',
+    name: 'signUp',
+    component: () => import(/* webpackChunkName: "signup" */ '../views/SignUp.vue')
+  },
+  {
+    path: '/profile',
+    name: 'userProfile',
+    component: () => import(/* webpackChunkName: "userProfile" */ '../views/UserProfile.vue')
+  },
 ]
 
 const router = createRouter({
