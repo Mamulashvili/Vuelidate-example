@@ -5,10 +5,17 @@
     <router-link :to="{ name: 'signUp' }">Sign Up</router-link> |
     <router-link :to="{ name: 'userProfile' }">User profile</router-link>
   </div>
-  <router-view />
+  <div class="wrapper">
+    <router-view />
+  </div>
 </template>
 
 <style lang="scss">
+*,
+body {
+  box-sizing: border-box;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -28,5 +35,18 @@
       color: #42b983;
     }
   }
+}
+
+.wrapper {
+  max-width: 30%;
+  margin: auto;
+}
+
+.info {
+  max-width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 5rem auto;
+  padding: 1rem;
 }
 </style>

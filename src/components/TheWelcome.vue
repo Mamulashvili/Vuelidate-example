@@ -28,6 +28,9 @@
           >vuex</a
         >
       </li>
+      <li>
+        <a href="#" target="_blank" rel="noopener">nprogress</a>
+      </li>
     </ul>
   </div>
 </template>
