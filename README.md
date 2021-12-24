@@ -4,6 +4,12 @@
 ```
 npm install
 ```
+dependencies:
+- vuex
+- vue-router
+- vuelidate
+- nprogress
+
 
 ### Compiles and hot-reloads for development
 ```
