@@ -42,11 +42,20 @@ body {
   margin: auto;
 }
 
+.info-wrapper {
+  margin: 5rem auto;
+  text-align: left;
+  p {
+    margin: 0;
+    font-weight: 600;
+    font-size: 13px;
+  }
+}
+
 .info {
   max-width: 100%;
   border: 1px solid #ddd;
   border-radius: 5px;
-  margin: 5rem auto;
   padding: 1rem;
 }
 </style>
