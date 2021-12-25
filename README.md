@@ -37,8 +37,16 @@ required: helpers.withMessage("This field can't be empty", required),
 ```
 
 $lazy load param as a global config
+<br> 
+<b>composition API </b>
 ```js
 const v$ = useVuelidate(rules, state, { $lazy: true });
+```
+<b>config API </b>
+```js
+validationConfig: {
+   $lazy: true
+},
 ```
 
 Custom vuelidate validation rule with extra param. path:  /rules/emailValidation
