@@ -71,7 +71,8 @@ export default {
   methods: {
     async submitForm() {
       const isFormCorrect = await this.v$.$validate();
-      console.log("here we go ", isFormCorrect);
+      console.log(isFormCorrect);
+      // after submiting reset the vuelidator: this.v$.$reset()
     },
   },
 };

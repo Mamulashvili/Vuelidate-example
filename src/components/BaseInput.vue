@@ -40,8 +40,9 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped>
-input
+<style lang="sass">
+input,
+select
   padding: 0.7em
   border: 1px solid #ddd
   border-radius: 5px
