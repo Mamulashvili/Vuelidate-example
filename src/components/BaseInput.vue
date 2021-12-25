@@ -22,7 +22,7 @@ export default {
       type: String,
       default: "text",
     },
-    customStyle: String,
+    customStyle: [String, Array],
     id: {
       type: String,
       required: true,

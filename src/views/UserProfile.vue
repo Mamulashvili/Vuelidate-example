@@ -30,6 +30,7 @@
 import { reactive, ref, computed } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { minLength, required, email, helpers } from "@vuelidate/validators";
+import { customEmailValidation } from "../../rules/emailValidation";
 
 export default {
   setup() {
@@ -41,7 +42,12 @@ export default {
     // Custom validation rule
     const mustIncludeAtSign = (value) => value.includes("@");
 
-    const requiredNameLength = ref(52);
+    const requiredNameLength = ref(20);
+
+    const removeAtSymbol = computed(() =>
+      state.username.replace("@", "").toLowerCase()
+    );
+
     const rules = computed(() => ({
       username: {
         required,
@@ -54,6 +60,10 @@ export default {
       email: {
         required: helpers.withMessage("This fiels can't be empty", required), // Custom error message for vuelidate rule,
         email: helpers.withMessage("Email format is incorrect", email),
+        customEmailValidation: helpers.withMessage(
+          `Email must include you\'r username : ${removeAtSymbol.value}`,
+          customEmailValidation(removeAtSymbol.value)
+        ),
       },
     }));
 

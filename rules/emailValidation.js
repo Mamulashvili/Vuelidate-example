@@ -1,0 +1,1 @@
+export const customEmailValidation = param => value => value.includes(param)
