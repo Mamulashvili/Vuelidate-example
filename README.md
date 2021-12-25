@@ -23,3 +23,9 @@ npm run build
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## Views
+- Sign in
+(validate username & password, enable $autoDirty, enable $lazy validation) validates when user changes input values
+- Sign up
+- User profile
