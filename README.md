@@ -29,3 +29,23 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 (validate username & password, enable $autoDirty, enable $lazy validation) validates when user changes input values
 - Sign up
 - User profile
+
+vuelidate required validation rule with custom error message
+
+```js
+required: helpers.withMessage("This field can't be empty", required),
+```
+
+$lazy load param as a global config
+```js
+const v$ = useVuelidate(rules, state, { $lazy: true });
+```
+
+Custom vuelidate validation rule with extra param. path:  /rules/emailValidation
+```js
+export const customEmailValidation = param => value => value.includes(param)
+ customEmailValidation: helpers.withMessage(
+    `Email must include you\'r username : ${formatUsername.value}`,
+    customEmailValidation(formatUsername.value)
+),
+```
