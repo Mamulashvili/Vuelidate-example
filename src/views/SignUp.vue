@@ -46,7 +46,6 @@
       <base-error
         v-if="v$.user.username.$error"
         :errors="v$.user.username.$errors"
-        v-model:vm="user.gender"
       />
 
       <base-select
