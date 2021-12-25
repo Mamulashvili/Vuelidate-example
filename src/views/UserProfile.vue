@@ -44,7 +44,7 @@ export default {
 
     const requiredNameLength = ref(20);
 
-    const removeAtSymbol = computed(() =>
+    const formatUsername = computed(() =>
       state.username.replace("@", "").toLowerCase()
     );
 
@@ -58,11 +58,11 @@ export default {
         ),
       },
       email: {
-        required: helpers.withMessage("This fiels can't be empty", required), // Custom error message for vuelidate rule,
+        required: helpers.withMessage("This field can't be empty", required), // Custom error message for vuelidate rule,
         email: helpers.withMessage("Email format is incorrect", email),
         customEmailValidation: helpers.withMessage(
-          `Email must include you\'r username : ${removeAtSymbol.value}`,
-          customEmailValidation(removeAtSymbol.value)
+          `Email must include you\'r username : ${formatUsername.value}`,
+          customEmailValidation(formatUsername.value)
         ),
       },
     }));
