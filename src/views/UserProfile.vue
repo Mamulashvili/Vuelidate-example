@@ -3,10 +3,20 @@
     <h3>Welcome back, {{ state.username }}</h3>
 
     <form @submit.prevent="submitForm">
-      <base-input id="username" v-model:vm="state.username" label="Username" />
+      <base-input
+        id="username"
+        v-model:vm="state.username"
+        label="Username"
+        :customStyle="[v$.username.$error ? 'invalid' : '']"
+      />
       <base-error v-if="v$.username.$error" :errors="v$.username.$errors" />
 
-      <base-input id="email" v-model:vm="state.email" label="Email" />
+      <base-input
+        id="email"
+        v-model:vm="state.email"
+        label="Email"
+        :customStyle="[v$.email.$error ? 'invalid' : '']"
+      />
       <base-error v-if="v$.email.$error" :errors="v$.email.$errors" />
 
       <base-button> Update form </base-button>
@@ -42,12 +52,8 @@ export default {
         ),
       },
       email: {
-        required,
-        email,
-        customEmailValidation: helpers.withMessage(
-          "Email must include customValidation",
-          customEmailValidation
-        ),
+        required: helpers.withMessage("This fiels can't be empty", required), // Custom error message for vuelidate rule,
+        email: helpers.withMessage("Email format is incorrect", email),
       },
     }));
 
@@ -74,3 +80,12 @@ export default {
   // },
 };
 </script>
+
+<style lang="scss">
+.valid {
+  border: 1px solid green;
+}
+.invalid {
+  border: 1px solid red;
+}
+</style>
