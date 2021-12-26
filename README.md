@@ -49,7 +49,7 @@ validationConfig: {
 },
 ```
 
-Custom vuelidate validation rule with extra param. path:  /rules/emailValidation
+Custom vuelidate validation rule with extra param. path:  `/rules/emailValidation`
 ```js
 export const customEmailValidation = param => value => value.includes(param)
  customEmailValidation: helpers.withMessage(
